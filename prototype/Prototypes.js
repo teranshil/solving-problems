@@ -5,8 +5,8 @@ Array.prototype.max = function() {
      * */
     return Math.max.apply(null, this);
 }
-const array = [ 1, 2, 3, 4, 5 ];
-array.max();
+const array = [ 1, 2, 3, 6, 5 ];
+console.log(array.max());
 
 /** note */
 const max = array.max;

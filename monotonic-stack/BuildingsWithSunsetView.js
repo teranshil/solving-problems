@@ -1,5 +1,3 @@
-
-
 const getBuildingsWithView = (buildings) => {
     const monotonic = [];
     for (let index = buildings.length - 1; index >= 0 ; index--) {
