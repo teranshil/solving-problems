@@ -2,7 +2,7 @@
 
 ### What it's a graph ?
 
-    Graph is just a collection of nodes and edges
+    Graph is just a collection of nodes and edges (connection between pair of nodes)
 
 - Directed graph - think of it as one way street 🛑 **( if you go from 'A' to 'B', you cannot return )** 🛑
 - Undirected graph - think of it as two-way street 🛑 **( if you go from 'A' to 'B', you can return )** 🛑
