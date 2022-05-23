@@ -12,7 +12,26 @@ const countConstruct = function(target, words = []) {
     return count;
 }
 
-console.log( countConstruct('purple', ['purp', 'p', 'ur', 'le', 'purpl']) );
+console.log( countConstruct('purple', ['purp', 'p', 'ur', 'le', 'purpl', 'l', 'e']) );
+
+/* memoization */
+
+const countConstructMemoization = (target, words = [], memo = {}) => {
+
+    if(target === '') return 1;
+    if(target in memo) return memo[target];
+
+    let count = 0;
+    for (const word of words) {
+        if(target.indexOf(word) !== 0) continue;
+
+        const suffix = target.slice(word.length);
+        count += countConstruct(suffix, words);
+    }
+
+    memo[target] = count;
+    return count;
+}
 
 
 const allConstruct = function(target, words = []) {
@@ -31,4 +50,4 @@ const allConstruct = function(target, words = []) {
     return result;
 }
 
-console.log( allConstruct('purple', ['purp', 'p', 'ur', 'le', 'purpl']) );
+console.log( allConstruct('purple', ['purp', 'p', 'ur', 'le', 'purpl', 'l', 'e']) );

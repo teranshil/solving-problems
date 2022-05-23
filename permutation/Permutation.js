@@ -36,8 +36,8 @@ const permuteSecondWay = function(nums) {
     return result;
 }
 
-// console.log( permute([1, 2, 3]) );
-console.log( permuteSecondWay([1, 2, 3]) );
+console.log( permute([1, 1, 2]) );
+// console.log( permuteSecondWay([1, 1, 2]) );
 
 
 const permutations = function( nums ) {
@@ -59,3 +59,4 @@ const permutations = function( nums ) {
 
     return result;
 }
+
