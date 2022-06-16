@@ -31,6 +31,7 @@ const findMaxFormTimeLimit = function(strs, m, n) {
 // console.log(findMaxFormTimeLimit(["111","1000","1000","1000"], 9, 3)); // 3
 // console.log(findMaxFormTimeLimit(["10","0001","111001","1","0"], 3, 4)); // 3
 
+/* memoization */
 const findMaxForm = function(strs, m, n) {
     const strFrequency = Array.from({ length: strs.length }, () => [0, 0]);
     const dp = Array.from({ length: m + 1 }, () => Array.from({ length: n + 1 }, () => Array.from({ length: strs.length }, () => 0)) );
@@ -47,6 +48,7 @@ const findMaxForm = function(strs, m, n) {
 
     const helper = (zeroesCount, onesCount, index = 0) => {
 
+        // second condition is met if zeroesCount = 0 and onesCount = 0
         if(index >= strs.length || (zeroesCount + onesCount) < 0) {
             return 0;
         }
@@ -67,7 +69,6 @@ const findMaxForm = function(strs, m, n) {
         dp[zeroesCount][onesCount][index] = Math.max(countElIfCurrIncluded, countElIfCurrExcluded);
         return dp[zeroesCount][onesCount][index];
     }
-
 
     for (let index = 0; index < strs.length; index++) {
         strFrequency[index] = frequencyCount(strs[index]);
